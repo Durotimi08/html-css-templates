@@ -101,7 +101,7 @@
                                         <span>Explore The New Collection</span>
                                     </div>
                                     <div class="explore-body">
-                                        <div class="explore-body1"></div>
+                                        <!-- <div class="explore-body1"></div> -->
                                         <div class="explore-body-slide">
                                             <div class="eslider"></div>
                                         </div>
@@ -149,9 +149,6 @@
                                 </div>
                                 <div class="explore-body">
                                     <div class="explore-body1">
-                                        <div class="exor"><div class="single-explore"></div></div>
-                                        <div class="exor"><div class="single-explore"></div></div>
-                                        <div class="exor"><div class="single-explore"></div></div>
                                     </div>
                                     <div class="explore-body-slide">
                                         <div class="eslider"></div>
@@ -253,6 +250,46 @@
         flip1.setAttribute("src", product.color[0][1]);
         pic2.setAttribute("src", product.pic);
     }
+    // Sample array of items
+    const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+    const scrollContainer = document.querySelector('.explore-body1');
+    const exor = document.querySelectorAll('.exor');
+
+    function populateItems() {
+    scrollContainer.innerHTML = '';
+
+    const reversedItems = items.slice().reverse(); 
+    reversedItems.forEach((item) => {
+        const div = document.createElement('div');
+        div.className = 'exor';
+        div.innerHTML = "<div class='single-explore'></div>";
+        scrollContainer.appendChild(div);
+    });
+    }
+
+    function loadMoreItems(e) {
+    const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    if (scrollContainer.scrollLeft >= maxScrollLeft) {
+        const newItem = `Item ${items.length + 1}`;
+        items.push(newItem);
+
+        populateItems();
+
+        scrollContainer.scrollLeft = maxScrollLeft;
+    }
+    if (scrollContainer.scrollLeft === 0) {
+        const newItem = `Item ${items.length + 1}`;
+        items.push(newItem);
+
+        populateItems();
+
+        scrollContainer.scrollLeft = scrollContainer.scrollWidth / 2;
+    }
+    }
+
+    populateItems();
+
 
     function toggleSpinClasses() {
         const { spin, spin2 } = elements;
@@ -334,6 +371,8 @@
     elements.spin1.addEventListener("click", toggleSpinClasses);
     elements.button1.addEventListener("click", () => updateCountAndPage("prev"));
     elements.button2.addEventListener("click", () => updateCountAndPage("next"));
+    scrollContainer.addEventListener('scroll', loadMoreItems);
+
 
     const pickcoll = document.querySelectorAll(".ownu");
 
