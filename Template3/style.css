@@ -251,6 +251,17 @@ nav{
     transform: translateY(-50%);
     right: -50px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.location img{
+    width: 80px;
+}
+.location span:first-child{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    color: black; 
 }
 .support{
     position: absolute;
@@ -279,8 +290,23 @@ nav{
     height: 27px;
     background-color: white;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
-.support img{
+.loca img{
+    height: 25px;
+    width: auto;
+    transform: scale(0.7);
+    margin-left: 2px;
+}
+.loca span{
+    margin-bottom: 2.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+.support > img{
     height: 60%;
     width: 100%;
     border-top-left-radius: 10px;
