@@ -31,6 +31,11 @@ nav{
     max-width: 1000px;
     display: flex;
     align-items: center;
+    background-color: transparent;
+    border-radius: 30px;
+    height: 48px;
+    transition: 1s;
+    transition: 1s;
 }
 .nav > span:first-child{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -55,29 +60,76 @@ nav{
     align-items: center;
     color: white;
     cursor: pointer;
-    backdrop-filter: blur(1px);
-    border: 1px solid #343a40;
-}
-.contact-us:hover{
-    background-color: #343a40;
-    box-shadow: 1px 1px #343a40;
-    transform: scale(1.1);
-    transition: 1s;
-    margin-left: 10px;
+    margin-bottom:5px;
+    border: 1px solid black
 }
 .contact-us span{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
+    text-shadow: 1px 1px #343a40;
+}
+.search2{
+    margin-right: auto;
+    width: 330px;
+    height: 35px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+    background-color: black;
+    display: none;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    opacity: 1;
+}
+.search2:hover{
+    transition: 1s cubic-bezier(1, 1, 0, 0);
+}
+.search2 > input{
+    width: 287px;
+    height: 25px;
+    margin-left: 5px;
+    border-radius: 30px;
+    background-color: #e6e7e9;
+    outline: none;
+    border:  none;
+    padding-inline-start: 20px;
+}
+.search2 > input::placeholder{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px; 
+}
+.send{
+    width: 20px;
+    height: 20px;
+    border: 4px solid #e6e7e9;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.send:hover{
+    width: 22px;
+    height: 22px;
+    border: 2px solid #e6e7e9;
+    transform: scale(1.16);
+}
+.send img{
+    transform: scale(0.6);
 }
 .nav > span{
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: White;
-    font-size: 16px;
+    font-size: 15px;
     margin: 5px;
     cursor: pointer;
     position: relative;
+    text-shadow: 1px 1px #343a40;
+    margin-bottom: 10px;
 }
 .main{
     width: 100vw;
@@ -88,13 +140,15 @@ nav{
 }
 .main1{
     background-color: beige;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 }
 .bg{
     width: 100%;
     height: auto;
 }
 .head-text{
-   margin-bottom: 50px;
+   margin-bottom: 40px;
    /* margin-bottom: 50px; */
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    font-size: 100px;
@@ -103,14 +157,15 @@ nav{
    color: white;
    text-align: center;
    width: 70vw;
-   text-shadow: 3px 3px lightblue;
+   text-shadow: 3px 3px black;
    cursor: context-menu;
+   transition: 1s;
 }
 .search-bar{
     width: calc(100vw - 40px);
     max-width: 770px;
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -124,12 +179,16 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 60px);
     max-width: 770px;
     height: 45px;
     background-color: rgba(52, 58, 64, 0.8); 
     border: 1px solid white;
     border-radius: 30px;
+}
+.search:hover{
+    transition: 0.5s;
+    border: 1px solid black;
 }
 .search input{
     width: calc(100% - 60px);
@@ -159,6 +218,7 @@ nav{
     border-radius: 10px;
     display: flex;
     overflow: hidden;
+    transition: 1s;
 }
 .box1{
     position: relative;
@@ -169,6 +229,7 @@ nav{
     background-color: white;
     box-shadow: 1px #343a40;
     border-radius: inherit;
+    transition: 1s;
 }
 .span{
     position: absolute;
@@ -176,20 +237,12 @@ nav{
     left: 0;
     height: calc(25% - 20px);
     width: calc(100% - 20px);
-    background-color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
     padding: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-.span > span{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: black;
-    font-size: 17px;
-    font-weight: 600;
-    margin-right: auto;
-    cursor: pointer;
 }
 .plan-trip{
     height: 25px;
@@ -201,6 +254,7 @@ nav{
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-left: auto;
 }
 .plan-trip > span{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -208,11 +262,9 @@ nav{
     color: #343a40;
 }
 .box1:hover img{
-    transition: 1s all;
     transform: scale(1.3);
 }
 .box1:hover .span{
-    transition: 1s all;
     top: 75%;
 }
 .box1:first-child{
@@ -225,21 +277,127 @@ nav{
     width: 100%;
     height: 100%;
     border-radius: inherit;
+    transition: 1s;
 }
 .main2{
+    position: relative;
     width: calc(100% - 40px);
     height: fit-content;
     padding: 20px;
     display: flex;
     gap: 20px;
-    background-color: beige;
+    background-image: linear-gradient(80deg, #f3f4f6,#e6e7e9);
 }
 .main2 section:first-child{
     display: flex;
+    margin-left: 55px;
     align-items: center;
     justify-content: center;
     position: relative;
     height: fit-content;
+}
+.main2 section:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-left: 55px;
+    overflow-y: hidden;
+}
+.plane{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    z-index: 2;
+}
+.out{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.main2 section:last-child .cards{
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    animation: animate 15s linear infinite;
+    animation-delay: calc(3s * var(--delay));
+    overflow: hidden;
+    cursor: pointer;
+  }
+.down{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    transform: scale(0.8);
+    display: flex;
+    align-items: center;
+}
+.down span:first-child{
+    margin-right: auto;
+    color: white;
+    cursor: context-menu;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.down span:last-child{
+    height: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: orange;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+}
+.cards img{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+}
+.main2 section:last-child:hover .cards{
+  animation-play-state: paused;
+}
+.main2 section:last-child .cards:last-child{
+  animation-delay: calc(-3s * var(--delay));
+}
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+  5%, 20%{
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+  25%, 40%{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0%) scale(1.2);
+    box-shadow: none;
+  }
+  45%, 60%{
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+  65%, 100%{
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
 }
 .location{
     position: absolute;
@@ -255,12 +413,20 @@ nav{
     flex-direction: column;
 }
 .location img{
+    margin-top: 10px;
+    margin-bottom: 5px;
     width: 80px;
 }
-.location span:first-child{
+.g24{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 21px;
     color: black; 
+    margin-bottom: 3px;
+}
+.gg{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    color: black;  
 }
 .support{
     position: absolute;
@@ -273,10 +439,9 @@ nav{
 }
 .man-i{
     margin-bottom: 90px;
-    margin-left: 55px;
     position: relative;
     width: fit-content;
-    background-image: linear-gradient(180deg, beige 20%, wheat 20%);
+    background-image: linear-gradient(180deg, transparent 20%, grey 20%);
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -304,6 +469,7 @@ nav{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
     font-weight: 500;
+    cursor: context-menu;
 }
 .support > img{
     height: 60%;
@@ -371,4 +537,114 @@ nav{
     height: 40px;
     border-radius: 50%;
     border: 2px solid white;
+}
+.main3{
+    width: 100%;
+    height: 190px;
+    background-color: black;
+    position: relative;
+}
+.other-loca{
+    width: calc(100% - 241px);
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.ahah{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.car{
+    position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translateY(-100%) scale(1.3); 
+}
+.other-loca1{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.xsh{
+    width: 90px;
+    height: 140px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.other-loca1 div:last-child{
+    height: 140px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.other-loca1 div:last-child span:first-child{
+    color: white;
+    margin-top: 30px;
+    cursor: context-menu;
+    font-size: 16px;
+    margin-bottom: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.other-loca1 div:last-child span:last-child{
+    height: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: orange;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 40px;
+    width: fit-content;
+}
+.xsh img{
+    width: 90px;
+    height: 140px;
+    border-radius: 50px;
+    transition: 0.6s ease-in-out;
+}
+.xsh img:hover{
+    transform: scale(1.3);
+}
+.main4{
+    width: 100%;
+    height: 180px;
+    background-color: black;
+    border-top: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main4 section{
+    display: flex;
+    margin-bottom: 10px;
+}
+.main4 section span{
+    font-size: 81px;
+    color: white;
+    font-weight: lighter;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.main4 div{
+    display: flex;
+    align-items: baseline;
+}
+.main4 div span{
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main4 div a{
+    cursor: pointer;
+    color: orange;
+    font-size: 19px;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
